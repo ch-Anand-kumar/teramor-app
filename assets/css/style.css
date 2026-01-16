@@ -1,0 +1,350 @@
+/* =====================================================
+   Property App - Mobile-First Stylesheet
+   ===================================================== */
+
+/* Root Variables */
+:root {
+    --primary-color: #75413e;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --border-radius: 12px;
+    --header-height: 60px;
+    --bottom-nav-height: 70px;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* App Header */
+.app-header {
+    height: var(--header-height);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+}
+
+.app-header h1 {
+    font-size: 1.25rem;
+}
+
+/* Main Content */
+.app-content {
+    padding-top: var(--header-height);
+    padding-bottom: var(--bottom-nav-height);
+    min-height: 100vh;
+}
+
+/* Search Bar */
+.search-bar .input-group {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.search-bar .input-group-text,
+.search-bar .form-control {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+}
+
+.search-bar .form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary-color);
+}
+
+/* Property Cards */
+.property-card {
+    border-radius: var(--border-radius);
+    border: none;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.property-image {
+    border-radius: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+.property-card .card-body {
+    padding: 1rem;
+}
+
+.property-price {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Property Banner */
+.property-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Badges */
+.badge {
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+/* Buttons */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: #5e342f;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-lg,
+.btn-primary.py-3 {
+    min-height: 50px;
+    font-size: 1rem;
+}
+
+.btn-outline-secondary {
+    border: 2px solid var(--border-color);
+    color: var(--text-dark);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    height: var(--bottom-nav-height);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    padding: 0;
+}
+
+.bottom-nav .nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: 0.75rem 0.5rem;
+}
+
+.bottom-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.bottom-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.bottom-nav .nav-link i {
+    margin-bottom: 0.25rem;
+}
+
+.bottom-nav .nav-link small {
+    font-size: 0.7rem;
+    display: block;
+}
+
+/* Cards */
+.card {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(117, 65, 62, 0.15);
+}
+
+.form-control-lg {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+}
+
+.alert-info {
+    background-color: #e7f3ff;
+    color: #084298;
+}
+
+.alert-success {
+    background-color: #d1e7dd;
+    color: #0a3622;
+}
+
+/* Quick Info Grid */
+.border-end {
+    border-right: 1px solid var(--border-color) !important;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Utility Classes */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-secondary {
+    color: var(--text-muted) !important;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Scrollbar Styling (Optional) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .app-content {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    
+    .app-header .container-fluid,
+    .bottom-nav .container-fluid {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}
+
+/* Touch-Friendly Enhancements */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 48px;
+    }
+    
+    .nav-link {
+        min-height: 48px;
+    }
+}
+
+/* Loading States (Optional) */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Prevent Text Selection on Navigation */
+.bottom-nav {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Icon Spacing */
+.bi {
+    vertical-align: middle;
+}
+
+/* Property Details Specific Styles */
+.property-banner {
+    margin-bottom: 0;
+}
+
+/* Amenities List */
+.col-6 .bi-check-circle-fill {
+    font-size: 1.1rem;
+}
+
+/* Print Styles */
+@media print {
+    .app-header,
+    .bottom-nav {
+        display: none;
+    }
+    
+    .app-content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
